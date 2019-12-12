@@ -1,3 +1,11 @@
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -174,9 +182,31 @@ public class LoginForm extends javax.swing.JFrame {
         if(ui_StudentId.getText().equals(""))
         {
             ui_u.setVisible(true);
-        }else if(String.valueOf(ui_Password.getPassword()).equals(""))
+        }if(String.valueOf(ui_Password.getPassword()).equals(""))
         {
             ui_p.setVisible(true);
+        }
+        else{
+            Connection con = MyConnection.getConnection();
+            PreparedStatement ps;
+            
+              try {
+                  ps = con.prepareStatement("SELECT * FROM students WHERE 1 studentId =? AND password = ?");
+                  ps.setString(1, ui_StudentId.getText());
+                  ps.setString(2, String.valueOf(ui_Password.getPassword()));
+                  
+                  ResultSet rs = ps.executeQuery();
+                  
+                  if(rs.next()){
+                      System.out.println("YES");
+                  }else{
+                      System.out.println("NO");
+                  }
+                  
+              } catch (SQLException ex) {
+                  Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+              }
+            
         }
         
     }//GEN-LAST:event_ui_LoginActionPerformed
