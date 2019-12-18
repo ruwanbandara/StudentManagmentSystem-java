@@ -202,8 +202,8 @@ public class home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLCourseCount;
-    private javax.swing.JLabel jLStudentCount;
+    public static javax.swing.JLabel jLCourseCount;
+    public static javax.swing.JLabel jLStudentCount;
     public static javax.swing.JLabel jLWelcome;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

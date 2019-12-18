@@ -163,6 +163,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Student Count = "/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -204,6 +207,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Course Count ="/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

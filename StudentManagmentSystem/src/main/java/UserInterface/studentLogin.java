@@ -205,6 +205,14 @@ public class studentLogin extends javax.swing.JFrame {
                      Home.setLocationRelativeTo(null);
                      Home.setExtendedState(JFrame.MAXIMIZED_BOTH);
                      home.jLWelcome.setText("Welcome <"+ui_StudentId.getText()+">");
+                     
+                     // This get Student count in table
+                     home.jLStudentCount.setText("Student Count = "+Integer.toString(admin.countData()));
+                    
+                     //this get Coure count in tabele 
+                     home.jLCourseCount.setText("Course Count = "+Integer.toString(admin.countCourse()));
+
+                     
                      this.dispose();
                      
                     

@@ -52,6 +52,23 @@ return total;
              return 0;
          }
     }
+     
+     public int countCourse(){
+         int count = 0;
+         String sql = "SELECT COUNT(*) AS 'count' FROM `course`"; 
+         
+         try {
+             sqlConnector sqlConnector1 = new sqlConnector();
+             ResultSet rs = sqlConnector1.getSql(sql);
+             if(rs.next()){
+                 count = rs.getInt("count");
+                 return count;
+             }
+             return count;
+         } catch (Exception e) {
+             return 0;
+         }
+     }
 }
 
 
