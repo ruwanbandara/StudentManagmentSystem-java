@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.studentmanagmentsystem;
+package UserInterface;
+
 
 /**
  *
@@ -15,7 +16,9 @@ public class home extends javax.swing.JFrame {
      * Creates new form home
      */
     public home() {
+        super("home");
         initComponents();
+        
     }
 
     /**

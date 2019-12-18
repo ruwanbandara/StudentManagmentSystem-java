@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.studentmanagmentsystem;
+package UserInterface;
 
 import java.awt.Frame;
 import java.sql.Connection;
@@ -14,6 +14,8 @@ import java.util.logging.Level;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.OptionPaneUI;
+import DataBaseConnector.sqlConnector;
+import admin.admin;
 
 /**
  *
@@ -179,20 +181,23 @@ public class studentLogin extends javax.swing.JFrame {
             ui_p.setVisible(true);
         }
         else{
-            Connection con = dbConnector.connection();
-            PreparedStatement ps;
+//            Connection con = dbConnector.getConnection();
+//            PreparedStatement ps;
 
-            try {
-                ps = con.prepareStatement("SELECT * FROM students WHERE studentId =? AND password = ?");
-                ps.setString(1, ui_StudentId.getText());
-                ps.setString(2, String.valueOf(ui_Password.getPassword()));
-
-                ResultSet rs = ps.executeQuery();
-
-                if(rs.next()){
-                    
-                    
+//            try {
+         
+                
+                String id = ui_StudentId.getText();
+                String password = String.valueOf(ui_Password.getPassword());
+                
+                admin admin = new admin();
+                boolean test= admin.adminLogin(id, password);
+                
+                if (test) {
+                                        
                      setVisible(false);
+                    int total = admin.countData();
+                    System.out.println(total);
                     
                      home Home = new home();
                      Home.setVisible(true);
@@ -203,14 +208,27 @@ public class studentLogin extends javax.swing.JFrame {
                      this.dispose();
                      
                     
-                }else{
-                    System.out.println("NO");
+                }else {
+                    System.out.println("wrong");
                 }
+                
+                
+               
+                
 
-            } catch (SQLException ex) {
-//                Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
-                    JOptionPane.showMessageDialog(null, ex);
-            }
+//                
+//
+//                if(rs.next()){
+//                    
+
+//                }else{
+//                    System.out.println("NO");
+//                }
+//
+//            } catch (SQLException ex) {
+////                Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+//                    JOptionPane.showMessageDialog(null, ex);
+//            }
 
         }
 
