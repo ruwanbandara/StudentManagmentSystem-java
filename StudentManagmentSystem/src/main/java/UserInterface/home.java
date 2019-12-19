@@ -37,8 +37,6 @@ public class home extends javax.swing.JFrame {
         jPCourseCount = new javax.swing.JPanel();
         jLCourseCount = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -127,12 +125,6 @@ public class home extends javax.swing.JFrame {
                 .addGap(123, 123, 123))
         );
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
         jMenu3.setText("Student");
 
         jMenuItem1.setText("Add");
@@ -163,7 +155,12 @@ public class home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        // Item Add Student form
+        
+         studentRegister register = new studentRegister();
+                     register.setVisible(true);
+                     register.pack();
+                     register.setLocationRelativeTo(null);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
@@ -205,8 +202,6 @@ public class home extends javax.swing.JFrame {
     public static javax.swing.JLabel jLCourseCount;
     public static javax.swing.JLabel jLStudentCount;
     public static javax.swing.JLabel jLWelcome;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;

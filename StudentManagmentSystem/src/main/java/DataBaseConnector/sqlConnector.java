@@ -66,6 +66,28 @@ public class sqlConnector implements Connector {
         }
           
     }
+    
+    public Connection connection() {
+                  final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+           final String DB_URL = "jdbc:mysql://localhost:3306/studentmanagmentsystemuniversity?serverTimezone=" + TimeZone.getDefault().getID();
+   
+             final String USER = "root";
+            final String PASS ="";
+            
+             try {
+                     Class.forName(JDBC_DRIVER);
+                   con = DriverManager.getConnection(DB_URL,USER,PASS);
+                   return con;
+                   
+
+         
+                   
+          } catch (ClassNotFoundException | SQLException e) {
+             JOptionPane.showMessageDialog(null, e);  
+             return con;
+           
+        }
+    }
 
  
     
