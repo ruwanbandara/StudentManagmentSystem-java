@@ -23,12 +23,7 @@ public class admin {
                 sqlConnector sqlConnector1 = new sqlConnector();
                 ResultSet rs = sqlConnector1.getSql(sql);
                 
-                if (rs.next()) {
-                    return true;
-            
-                }else{
-                    return false;
-                }
+                return rs.next();
         } catch (Exception e) {
               return false;
         }
@@ -69,6 +64,13 @@ return total;
              return 0;
          }
      }
+     public studentRegister(){
+         
+         
+        
+         
+     };
+     
 }
 
 

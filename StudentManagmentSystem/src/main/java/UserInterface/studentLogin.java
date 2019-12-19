@@ -243,7 +243,7 @@ public class studentLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_ui_LoginActionPerformed
 
     private void ui_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ui_CancelActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_ui_CancelActionPerformed
 
     /**

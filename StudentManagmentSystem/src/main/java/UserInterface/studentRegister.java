@@ -5,6 +5,8 @@
  */
 package UserInterface;
 
+import javax.swing.ButtonGroup;
+
 /**
  *
  * @author Ruwan Bandara
@@ -15,7 +17,15 @@ public class studentRegister extends javax.swing.JFrame {
      * Creates new form studentRegister
      */
     public studentRegister() {
+        super("studentRegister");
         initComponents();
+        
+         ButtonGroup bg = new ButtonGroup();
+         bg.add(jRadioButton_Male);
+         bg.add(jRadioButton_Female);
+         jRadioButton_Male.setSelected(true);
+         
+       
     }
 
     /**
@@ -47,8 +57,9 @@ public class studentRegister extends javax.swing.JFrame {
         jPasswordField_Password = new javax.swing.JPasswordField();
         jTextField_BirthDay = new javax.swing.JTextField();
         jRadioButton_Male = new javax.swing.JRadioButton();
-        jRadioButton_Fmale = new javax.swing.JRadioButton();
+        jRadioButton_Female = new javax.swing.JRadioButton();
         jButton_Add = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,11 +88,20 @@ public class studentRegister extends javax.swing.JFrame {
 
         jRadioButton_Male.setText("Male");
 
-        jRadioButton_Fmale.setText("Fmale");
+        jRadioButton_Female.setText("Female");
 
         jButton_Add.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton_Add.setForeground(new java.awt.Color(0, 0, 255));
+        jButton_Add.setForeground(new java.awt.Color(102, 102, 255));
         jButton_Add.setText("ADD");
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(102, 102, 255));
+        jButton1.setText("Cancel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -118,11 +138,13 @@ public class studentRegister extends javax.swing.JFrame {
                                 .addGap(30, 30, 30)
                                 .addComponent(jRadioButton_Male)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                                .addComponent(jRadioButton_Fmale)
+                                .addComponent(jRadioButton_Female)
                                 .addGap(61, 61, 61)))))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 112, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(51, 51, 51)
                 .addComponent(jButton_Add)
                 .addGap(238, 238, 238))
         );
@@ -148,7 +170,7 @@ public class studentRegister extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jRadioButton_Male)
-                    .addComponent(jRadioButton_Fmale))
+                    .addComponent(jRadioButton_Female))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -171,7 +193,9 @@ public class studentRegister extends javax.swing.JFrame {
                             .addComponent(jPasswordField_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jTextField_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
-                .addComponent(jButton_Add)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton_Add)
+                    .addComponent(jButton1))
                 .addGap(61, 61, 61))
         );
 
@@ -190,6 +214,10 @@ public class studentRegister extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,6 +255,7 @@ public class studentRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton_Add;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -240,7 +269,7 @@ public class studentRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField_Password;
-    private javax.swing.JRadioButton jRadioButton_Fmale;
+    private javax.swing.JRadioButton jRadioButton_Female;
     private javax.swing.JRadioButton jRadioButton_Male;
     private javax.swing.JTextField jTextField_Address;
     private javax.swing.JTextField jTextField_BirthDay;
