@@ -64,7 +64,7 @@ return total;
              return 0;
          }
      }
-     public studentRegister(){
+     public admin(){
          
          
         

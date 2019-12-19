@@ -5,6 +5,7 @@
  */
 package UserInterface;
 
+import java.text.SimpleDateFormat;
 import javax.swing.ButtonGroup;
 
 /**
@@ -47,14 +48,12 @@ public class studentRegister extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jTextField_SudentId = new javax.swing.JTextField();
         jTextField_FirstName = new javax.swing.JTextField();
         jTextField_LastName = new javax.swing.JTextField();
         jTextField_PhoneNumber = new javax.swing.JTextField();
         jTextField_Address = new javax.swing.JTextField();
         jTextField_Email = new javax.swing.JTextField();
-        jPasswordField_Password = new javax.swing.JPasswordField();
         jTextField_BirthDay = new javax.swing.JTextField();
         jRadioButton_Male = new javax.swing.JRadioButton();
         jRadioButton_Female = new javax.swing.JRadioButton();
@@ -84,8 +83,6 @@ public class studentRegister extends javax.swing.JFrame {
 
         jLabel9.setText("Email :");
 
-        jLabel10.setText("Password :");
-
         jTextField_PhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_PhoneNumberActionPerformed(evt);
@@ -104,6 +101,11 @@ public class studentRegister extends javax.swing.JFrame {
         jButton_Add.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton_Add.setForeground(new java.awt.Color(102, 102, 255));
         jButton_Add.setText("ADD");
+        jButton_Add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_AddActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(102, 102, 255));
@@ -133,8 +135,7 @@ public class studentRegister extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
                             .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
+                            .addComponent(jLabel9))
                         .addGap(60, 60, 60)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField_SudentId)
@@ -143,7 +144,6 @@ public class studentRegister extends javax.swing.JFrame {
                             .addComponent(jTextField_PhoneNumber)
                             .addComponent(jTextField_Address)
                             .addComponent(jTextField_Email)
-                            .addComponent(jPasswordField_Password)
                             .addComponent(jTextField_BirthDay)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
@@ -153,11 +153,11 @@ public class studentRegister extends javax.swing.JFrame {
                                 .addGap(61, 61, 61)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 130, Short.MAX_VALUE)
+                .addGap(0, 133, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(51, 51, 51)
+                .addGap(50, 50, 50)
                 .addComponent(jButton_Add)
-                .addGap(238, 238, 238))
+                .addGap(236, 236, 236))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,18 +196,13 @@ public class studentRegister extends javax.swing.JFrame {
                     .addComponent(jTextField_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(jPasswordField_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel9)
                     .addComponent(jTextField_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(75, 75, 75)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_Add)
-                    .addComponent(jButton1))
-                .addGap(61, 61, 61))
+                    .addComponent(jButton1)
+                    .addComponent(jButton_Add))
+                .addGap(75, 75, 75))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -239,6 +234,36 @@ public class studentRegister extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jTextField_PhoneNumberKeyTyped
+
+    private void jButton_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AddActionPerformed
+        
+        String StdentId = jTextField_SudentId.getText();
+        String FirstName = jTextField_FirstName.getText();
+        String LastName = jTextField_LastName.getText();
+        String BirthDay = jTextField_BirthDay.getText();
+        String PhoneNumber = jTextField_PhoneNumber.getText();
+        String Address = jTextField_PhoneNumber.getText();
+        String Email = jTextField_Email.getText();
+       // char[] Password = jPasswordField_Password.getPassword();
+        String Sex = "Male";
+        if (jRadioButton_Female.isSelected()) {
+            Sex = "Female";
+            
+        }
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-DD");
+//        String BirthDay = dateFormat.format(jTextField_BirthDay.getDate());
+
+    Student std = new Student();
+    std.insertUpdateDeleteStudent('1', StdentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email);
+    
+    
+                
+                
+                
+                
+                
+        
+    }//GEN-LAST:event_jButton_AddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,7 +304,6 @@ public class studentRegister extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton_Add;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -289,7 +313,6 @@ public class studentRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField_Password;
     private javax.swing.JRadioButton jRadioButton_Female;
     private javax.swing.JRadioButton jRadioButton_Male;
     private javax.swing.JTextField jTextField_Address;

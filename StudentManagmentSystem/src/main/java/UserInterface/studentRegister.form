@@ -60,7 +60,6 @@
                               <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -70,7 +69,6 @@
                               <Component id="jTextField_PhoneNumber" max="32767" attributes="0"/>
                               <Component id="jTextField_Address" max="32767" attributes="0"/>
                               <Component id="jTextField_Email" max="32767" attributes="0"/>
-                              <Component id="jPasswordField_Password" max="32767" attributes="0"/>
                               <Component id="jTextField_BirthDay" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -85,11 +83,11 @@
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="130" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="133" max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="jButton_Add" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -138,22 +136,15 @@
                   </Group>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jPasswordField_Password" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextField_Email" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton_Add" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton_Add" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -207,11 +198,6 @@
             <Property name="text" type="java.lang.String" value="Email :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Password :"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="jTextField_SudentId">
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_FirstName">
@@ -227,8 +213,6 @@
         <Component class="javax.swing.JTextField" name="jTextField_Address">
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_Email">
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField_Password">
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_BirthDay">
         </Component>
@@ -252,6 +236,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="ADD"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_AddActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>

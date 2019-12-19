@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * @author Ruwan Bandara
  */
 public class Student {
-    public void insertUpdateDeleteStudent(char operation, String StudentId, String FirstName, String LastName, String Sex, Date BirthDay, String PhoneNumber, String Address, String Email, String Password  ){
+    public void insertUpdateDeleteStudent(char operation, String StudentId, String FirstName, String LastName, String Sex, String BirthDay, String PhoneNumber, String Address, String Email  ){
         
      
         sqlConnector sqlConnector1 = new sqlConnector ();
@@ -24,15 +24,16 @@ public class Student {
         
         if (operation == 'i') {
             try {
-                ps = con.prepareStatement("INSERT INTO students(StudentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email, Password) VALUES (?,?,?,?,?,?,?,?,?)");
-                ps.setString(1, FirstName);
-                ps.setString(1, LastName);
-                ps.setString(1, Sex);
-                ps.setDate(1, BirthDay);
-                ps.setString(1, PhoneNumber);
-                ps.setString(1, Address);
-                ps.setString(1, Email);
-                ps.setString(1, Password);
+                ps = con.prepareStatement("INSERT INTO students(StudentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email) VALUES (?,?,?,?,?,?,?,?)");
+                ps.setString(1, StudentId);
+                ps.setString(2, FirstName);
+                ps.setString(3, LastName);
+                ps.setString(4, Sex);
+                ps.setString(5, BirthDay);
+                ps.setString(6, PhoneNumber);
+                ps.setString(7, Address);
+                ps.setString(8, Email);
+               // ps.setString(9, Password);
                 
                 if (ps.executeUpdate() > 0) {
                     JOptionPane.showMessageDialog(null, "New StudentAdded");
