@@ -41,12 +41,14 @@ public class studentRegister extends javax.swing.JFrame {
         jTextField_SudentId = new javax.swing.JTextField();
         jTextField_FirstName = new javax.swing.JTextField();
         jTextField_LastName = new javax.swing.JTextField();
-        jTextField_Sex = new javax.swing.JTextField();
         jTextField_PhoneNumber = new javax.swing.JTextField();
         jTextField_Address = new javax.swing.JTextField();
         jTextField_Email = new javax.swing.JTextField();
         jPasswordField_Password = new javax.swing.JPasswordField();
         jTextField_BirthDay = new javax.swing.JTextField();
+        jRadioButton_Male = new javax.swing.JRadioButton();
+        jRadioButton_Fmale = new javax.swing.JRadioButton();
+        jButton_Add = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +74,14 @@ public class studentRegister extends javax.swing.JFrame {
         jLabel9.setText("Email :");
 
         jLabel10.setText("Password :");
+
+        jRadioButton_Male.setText("Male");
+
+        jRadioButton_Fmale.setText("Fmale");
+
+        jButton_Add.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton_Add.setForeground(new java.awt.Color(0, 0, 255));
+        jButton_Add.setText("ADD");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -99,13 +109,22 @@ public class studentRegister extends javax.swing.JFrame {
                             .addComponent(jTextField_SudentId)
                             .addComponent(jTextField_FirstName)
                             .addComponent(jTextField_LastName)
-                            .addComponent(jTextField_Sex)
                             .addComponent(jTextField_PhoneNumber)
                             .addComponent(jTextField_Address)
                             .addComponent(jTextField_Email)
-                            .addComponent(jPasswordField_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                            .addComponent(jTextField_BirthDay))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                            .addComponent(jPasswordField_Password)
+                            .addComponent(jTextField_BirthDay)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(jRadioButton_Male)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                                .addComponent(jRadioButton_Fmale)
+                                .addGap(61, 61, 61)))))
+                .addContainerGap(147, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton_Add)
+                .addGap(238, 238, 238))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,11 +144,12 @@ public class studentRegister extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(jLabel4))
                     .addComponent(jTextField_LastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField_Sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                    .addComponent(jRadioButton_Male)
+                    .addComponent(jRadioButton_Fmale))
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTextField_BirthDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -150,14 +170,16 @@ public class studentRegister extends javax.swing.JFrame {
                             .addComponent(jLabel10)
                             .addComponent(jPasswordField_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jTextField_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(jButton_Add)
+                .addGap(61, 61, 61))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,6 +227,7 @@ public class studentRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton_Add;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -217,13 +240,14 @@ public class studentRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField_Password;
+    private javax.swing.JRadioButton jRadioButton_Fmale;
+    private javax.swing.JRadioButton jRadioButton_Male;
     private javax.swing.JTextField jTextField_Address;
     private javax.swing.JTextField jTextField_BirthDay;
     private javax.swing.JTextField jTextField_Email;
     private javax.swing.JTextField jTextField_FirstName;
     private javax.swing.JTextField jTextField_LastName;
     private javax.swing.JTextField jTextField_PhoneNumber;
-    private javax.swing.JTextField jTextField_Sex;
     private javax.swing.JTextField jTextField_SudentId;
     // End of variables declaration//GEN-END:variables
 }
