@@ -6,6 +6,7 @@
 
 package DataBaseConnector;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 
 
@@ -16,6 +17,7 @@ import java.sql.ResultSet;
 public interface Connector {
     public void connect();
     public ResultSet getSql(String sql);
+    public Connection connection();
     
    
     

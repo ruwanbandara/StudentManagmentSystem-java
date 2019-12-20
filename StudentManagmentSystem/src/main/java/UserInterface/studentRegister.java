@@ -65,7 +65,7 @@ public class studentRegister extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Student SignUp");
+        jLabel1.setText("Student Register");
 
         jLabel2.setText("Student ID:");
 
@@ -244,7 +244,7 @@ public class studentRegister extends javax.swing.JFrame {
         String PhoneNumber = jTextField_PhoneNumber.getText();
         String Address = jTextField_PhoneNumber.getText();
         String Email = jTextField_Email.getText();
-       // char[] Password = jPasswordField_Password.getPassword();
+        String Password = jTextField_SudentId.getText();
         String Sex = "Male";
         if (jRadioButton_Female.isSelected()) {
             Sex = "Female";
@@ -253,8 +253,9 @@ public class studentRegister extends javax.swing.JFrame {
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-DD");
 //        String BirthDay = dateFormat.format(jTextField_BirthDay.getDate());
 
-    Student std = new Student();
-    std.insertUpdateDeleteStudent('1', StdentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email);
+    
+Student std = new Student();
+    std.insertUpdateDeleteStudent('i',StdentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email, Password);
     
     
                 
