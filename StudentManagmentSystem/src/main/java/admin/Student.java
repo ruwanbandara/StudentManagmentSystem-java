@@ -1,6 +1,6 @@
 
 
-package UserInterface;
+package admin;
 
 //import com.sun.jndi.ldap.Connection;
 import DataBaseConnector.sqlConnector;

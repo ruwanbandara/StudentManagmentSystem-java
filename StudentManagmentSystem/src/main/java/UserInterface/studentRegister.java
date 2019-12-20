@@ -5,8 +5,10 @@
  */
 package UserInterface;
 
+import admin.Student;
 import java.text.SimpleDateFormat;
 import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -125,6 +127,11 @@ public class studentRegister extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(142, 142, 142)
                         .addComponent(jLabel1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(107, 107, 107)
+                        .addComponent(jButton_Add))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,20 +158,14 @@ public class studentRegister extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                                 .addComponent(jRadioButton_Female)
                                 .addGap(61, 61, 61)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 133, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(50, 50, 50)
-                .addComponent(jButton_Add)
-                .addGap(236, 236, 236))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -198,11 +199,11 @@ public class studentRegister extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(jTextField_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(75, 75, 75)
+                .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton_Add))
-                .addGap(75, 75, 75))
+                    .addComponent(jButton_Add)
+                    .addComponent(jButton1))
+                .addGap(103, 103, 103))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -235,6 +236,18 @@ public class studentRegister extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextField_PhoneNumberKeyTyped
 
+    public boolean verifText(){
+        if (jTextField_FirstName.getText().equals("") || jTextField_LastName.getText().equals("")
+                || jTextField_Address.getText().equals("") || jTextField_PhoneNumber.getText().equals("") 
+                || jTextField_BirthDay.getText() == null ) 
+        {
+            JOptionPane.showMessageDialog(null, "One or More Empty Filed.");
+            return false;
+            
+        }else{
+            return true;
+        }
+    }
     private void jButton_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AddActionPerformed
         
         String StdentId = jTextField_SudentId.getText();
@@ -253,10 +266,17 @@ public class studentRegister extends javax.swing.JFrame {
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-DD");
 //        String BirthDay = dateFormat.format(jTextField_BirthDay.getDate());
 
+        if (verifText()) {
+           
+             Student std = new Student();
+             std.insertUpdateDeleteStudent('i',StdentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email, Password);
     
-Student std = new Student();
-    std.insertUpdateDeleteStudent('i',StdentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email, Password);
-    
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"Allrady Register Student.");
+            
+        }
+   
     
                 
                 
