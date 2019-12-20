@@ -5,6 +5,9 @@
  */
 package UserInterface;
 
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+
 
 /**
  *
@@ -161,6 +164,7 @@ public class home extends javax.swing.JFrame {
                      register.setVisible(true);
                      register.pack();
                      register.setLocationRelativeTo(null);
+                     register.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
