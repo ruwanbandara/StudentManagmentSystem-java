@@ -42,6 +42,7 @@ public class home extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -138,6 +139,15 @@ public class home extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem1);
 
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("Manage");
+        jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jCheckBoxMenuItem1);
+
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
@@ -166,6 +176,17 @@ public class home extends javax.swing.JFrame {
                      register.setLocationRelativeTo(null);
                      register.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
+
+                     ManageStudents manage = new ManageStudents();
+                     manage.setVisible(true);
+                     manage.pack();
+                     manage.setLocationRelativeTo(null);
+                     manage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    
+        
+    }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,6 +224,7 @@ public class home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     public static javax.swing.JLabel jLCourseCount;
     public static javax.swing.JLabel jLStudentCount;
     public static javax.swing.JLabel jLWelcome;

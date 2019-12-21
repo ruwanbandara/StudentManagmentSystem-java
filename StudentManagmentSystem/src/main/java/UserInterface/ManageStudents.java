@@ -1,6 +1,7 @@
 
 package UserInterface;
 
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -254,32 +255,11 @@ public class ManageStudents extends javax.swing.JFrame {
 
     private void jButton_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AddActionPerformed
 
-//        String StdentId = jTextField_SudentId.getText();
-//        String FirstName = jTextField_FirstName.getText();
-//        String LastName = jTextField_LastName.getText();
-//        String BirthDay = jTextField_BirthDay.getText();
-//        String PhoneNumber = jTextField_PhoneNumber.getText();
-//        String Address = jTextField_PhoneNumber.getText();
-//        String Email = jTextField_Email.getText();
-//        String Password = jTextField_SudentId.getText();
-//        String Sex = "Male";
-//        if (jRadioButton_Female.isSelected()) {
-//            Sex = "Female";
-//
-//        }
-//        //        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-DD");
-//        //        String BirthDay = dateFormat.format(jTextField_BirthDay.getDate());
-//
-//        if (verifText()) {
-//
-//            Student std = new Student();
-//            std.insertUpdateDeleteStudent('i',StdentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email, Password);
-//
-//        }else{
-//            JOptionPane.showMessageDialog(null,"Allrady Register Student.");
-//
-//        }
-
+         studentRegister register = new studentRegister();
+                     register.setVisible(true);
+                     register.pack();
+                     register.setLocationRelativeTo(null);
+                     register.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jButton_AddActionPerformed
 
     private void jButtonRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveActionPerformed
@@ -290,6 +270,14 @@ public class ManageStudents extends javax.swing.JFrame {
         
         int rowIndex = table.getSelectedRow();
         DefaultTableModel model =(DefaultTableModel) table.getModel(); 
+        if (model.getValueAt(rowIndex,3).toString().equals("Male"))
+        {
+            jRadioButton_Male.setSelected(true);
+            jRadioButton_Female.setSelected(false);
+        }else{
+            jRadioButton_Female.setSelected(true);
+            jRadioButton_Male.setSelected(false);
+        }
         
         jTextField_FirstName.setText(model.getValueAt(rowIndex, 1).toString());
         jTextField_LastName.setText(model.getValueAt(rowIndex, 2).toString());
