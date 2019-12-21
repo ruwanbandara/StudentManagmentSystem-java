@@ -74,7 +74,7 @@ public class Student {
             Object[] row;
             
             while (rs.next()) {
-                row = new Object[7];
+                row = new Object[8];
                 row[0] = rs.getString(1);
                 row[1] = rs.getString(2);
                 row[2] = rs.getString(3);
@@ -82,6 +82,8 @@ public class Student {
                 row[4] = rs.getString(5);
                 row[5] = rs.getString(6);
                 row[6] = rs.getString(7);
+                row[7] = rs.getString(8);
+                
                 
                 model.addRow(row);
                 

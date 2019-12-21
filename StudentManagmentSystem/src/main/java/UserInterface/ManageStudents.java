@@ -1,6 +1,8 @@
 
 package UserInterface;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Ruwan Bandara
@@ -117,6 +119,11 @@ public class ManageStudents extends javax.swing.JFrame {
                 "Student ID", "First Name", "Last Name", "Sex", "BirthDay", "Phone Number", "Address", "Email"
             }
         ));
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(table);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -278,6 +285,23 @@ public class ManageStudents extends javax.swing.JFrame {
     private void jButtonRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButtonRemoveActionPerformed
+
+    private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+        
+        int rowIndex = table.getSelectedRow();
+        DefaultTableModel model =(DefaultTableModel) table.getModel(); 
+        
+        jTextField_FirstName.setText(model.getValueAt(rowIndex, 1).toString());
+        jTextField_LastName.setText(model.getValueAt(rowIndex, 2).toString());
+        jTextField_Address.setText(model.getValueAt(rowIndex, 6).toString());
+        jTextField_BirthDay.setText(model.getValueAt(rowIndex, 4).toString());
+        jTextField_Email.setText(model.getValueAt(rowIndex, 7).toString());
+        jTextField_PhoneNumber.setText(model.getValueAt(rowIndex, 5).toString());
+        jTextField_SudentId.setText(model.getValueAt(rowIndex, 0).toString());
+       // jTextField_.setText(model.getValueAt(rowIndex, 0).toString());
+        
+        
+    }//GEN-LAST:event_tableMouseClicked
 
     /**
      * @param args the command line arguments
