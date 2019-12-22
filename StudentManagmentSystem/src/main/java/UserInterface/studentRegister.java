@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package UserInterface;
 
 import java.text.SimpleDateFormat;
@@ -18,6 +14,7 @@ public class studentRegister extends javax.swing.JFrame {
     /**
      * Creates new form studentRegister
      */
+    Student std = new Student();
     public studentRegister() {
         super("studentRegister");
         initComponents();
@@ -265,19 +262,25 @@ public class studentRegister extends javax.swing.JFrame {
             Sex = "Female";
             
         }
+                    
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-DD");
+//        String BirthDay = dateFormat.format(jTextField_BirthDay.getDate()); 
+        
+        if (verifText()) {
+            
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-DD");
 //        String BirthDay = dateFormat.format(jTextField_BirthDay.getDate());
-
-        if (verifText()) {
            
              Student std = new Student();
              std.insertUpdateDeleteStudent('i',StdentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email, Password);
-    
+            
             
         }else{
             JOptionPane.showMessageDialog(null,"Allrady Register Student.");
             
         }
+        
+        
    
     
                 
