@@ -50,6 +50,8 @@ public class ManageStudents extends javax.swing.JFrame {
         jButtonEdit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField_SearchBar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,6 +129,18 @@ public class ManageStudents extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(table);
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel10.setText("Enter Student ID Search");
+
+        jTextField_SearchBar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField_SearchBarKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField_SearchBarKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -167,8 +181,15 @@ public class ManageStudents extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                         .addComponent(jRadioButton_Female)
                         .addGap(61, 61, 61)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 849, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(216, 216, 216)
+                        .addComponent(jLabel10)
+                        .addGap(56, 56, 56)
+                        .addComponent(jTextField_SearchBar, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)))
                 .addGap(43, 43, 43))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(546, 546, 546)
@@ -180,14 +201,17 @@ public class ManageStudents extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel2)
-                                    .addComponent(jTextField_SudentId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jTextField_SudentId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel10)
+                                        .addComponent(jTextField_SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(34, 34, 34)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
@@ -221,7 +245,7 @@ public class ManageStudents extends javax.swing.JFrame {
                             .addComponent(jButton_Add)
                             .addComponent(jButtonRemove)
                             .addComponent(jButtonEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(103, 103, 103))
         );
 
@@ -291,6 +315,15 @@ public class ManageStudents extends javax.swing.JFrame {
         
     }//GEN-LAST:event_tableMouseClicked
 
+    private void jTextField_SearchBarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_SearchBarKeyTyped
+        
+    }//GEN-LAST:event_jTextField_SearchBarKeyTyped
+
+    private void jTextField_SearchBarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_SearchBarKeyPressed
+        table.setModel(new DefaultTableModel(null, new Object[]{"Student ID","First Name","Last Name", "Sex","BirthDay","Phone Number","Address","Email"}));
+        std.fillStudentJtable(table, jTextField_SearchBar.getText());
+    }//GEN-LAST:event_jTextField_SearchBarKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -331,6 +364,7 @@ public class ManageStudents extends javax.swing.JFrame {
     private javax.swing.JButton jButtonRemove;
     private javax.swing.JButton jButton_Add;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -349,6 +383,7 @@ public class ManageStudents extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_FirstName;
     private javax.swing.JTextField jTextField_LastName;
     private javax.swing.JTextField jTextField_PhoneNumber;
+    private javax.swing.JTextField jTextField_SearchBar;
     private javax.swing.JTextField jTextField_SudentId;
     private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
