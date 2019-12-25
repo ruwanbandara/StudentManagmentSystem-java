@@ -18,7 +18,7 @@ public class admin {
     
     public boolean adminLogin(String id, String password){
             try {
-                String sql = "SELECT * FROM students WHERE studentId ='"+id+"' AND password = '"+password+"'" ;
+                String sql = "SELECT * FROM addmin WHERE id ='"+id+"' AND password = '"+password+"'" ;
          
                 sqlConnector sqlConnector1 = new sqlConnector();
                 ResultSet rs = sqlConnector1.getSql(sql);
