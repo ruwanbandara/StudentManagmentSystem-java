@@ -112,6 +112,11 @@ public class ManageStudents extends javax.swing.JFrame {
         jButtonEdit.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButtonEdit.setForeground(new java.awt.Color(102, 102, 255));
         jButtonEdit.setText("Edit");
+        jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditActionPerformed(evt);
+            }
+        });
 
         table.setBackground(new java.awt.Color(204, 204, 204));
         table.setModel(new javax.swing.table.DefaultTableModel(
@@ -323,6 +328,13 @@ public class ManageStudents extends javax.swing.JFrame {
         table.setModel(new DefaultTableModel(null, new Object[]{"Student ID","First Name","Last Name", "Sex","BirthDay","Phone Number","Address","Email"}));
         std.fillStudentJtable(table, jTextField_SearchBar.getText());
     }//GEN-LAST:event_jTextField_SearchBarKeyPressed
+
+    private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
+               
+        
+        
+        
+    }//GEN-LAST:event_jButtonEditActionPerformed
 
     /**
      * @param args the command line arguments
