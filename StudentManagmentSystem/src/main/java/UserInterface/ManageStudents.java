@@ -1,7 +1,10 @@
 
 package UserInterface;
 
+import com.sun.management.jmx.Trace;
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -15,6 +18,12 @@ public class ManageStudents extends javax.swing.JFrame {
     public ManageStudents() {
         initComponents();
         std.fillStudentJtable(table, "");
+        
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(jRadioButton_Female);
+        bg.add(jRadioButton_Male);
+        
+        
     }
 
     /**
@@ -292,7 +301,18 @@ public class ManageStudents extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_AddActionPerformed
 
     private void jButtonRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveActionPerformed
-        this.dispose();
+       
+        if (jTextField_SudentId.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No Student Selected");
+            
+        }else{
+        String StdentId = String.valueOf(jTextField_SudentId.getText());
+        std.insertUpdateDeleteStudent('d',StdentId, null, null, null, null, null, null, null, null);
+            int countData = admin.admin.countData();
+            
+        }
+        
+        
     }//GEN-LAST:event_jButtonRemoveActionPerformed
 
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
@@ -329,10 +349,54 @@ public class ManageStudents extends javax.swing.JFrame {
         std.fillStudentJtable(table, jTextField_SearchBar.getText());
     }//GEN-LAST:event_jTextField_SearchBarKeyPressed
 
+     public boolean verifText(){
+        if (jTextField_FirstName.getText().equals("") || jTextField_LastName.getText().equals("")
+                || jTextField_Address.getText().equals("") || jTextField_PhoneNumber.getText().equals("") 
+               || jTextField_SudentId.getText().equals("") || jTextField_BirthDay.getText() == null ) 
+        {
+            JOptionPane.showMessageDialog(null, "One or More Empty Filed.");
+            return false;
+            
+        }else{
+            return true;
+        }
+    }
+    
     private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
                
         
+       String StdentId = jTextField_SudentId.getText();
+        String FirstName = jTextField_FirstName.getText();
+        String LastName = jTextField_LastName.getText();
+        String BirthDay = jTextField_BirthDay.getText();
+        String PhoneNumber = jTextField_PhoneNumber.getText();
+        String Address = jTextField_PhoneNumber.getText();
+        String Email = jTextField_Email.getText();
+        String Password = jTextField_SudentId.getText();
+        String Sex = "" ;
+        if (jRadioButton_Female.isSelected()) {
+            Sex = "Female";
+            
+        }else if(jRadioButton_Female.isSelected()){
+             Sex = "Male";
+         }
+                    
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-DD");
+//        String BirthDay = dateFormat.format(jTextField_BirthDay.getDate()); 
         
+        if (verifText()) {
+            
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-DD");
+//        String BirthDay = dateFormat.format(jTextField_BirthDay.getDate());
+           
+             Student std = new Student();
+             std.insertUpdateDeleteStudent('u',StdentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email, Password);
+            
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"Allrady Register Student.");
+            
+        }  
         
     }//GEN-LAST:event_jButtonEditActionPerformed
 

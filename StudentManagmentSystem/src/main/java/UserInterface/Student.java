@@ -29,7 +29,7 @@ public class Student {
         PreparedStatement ps;
 //        System.out.println("nkjn");
         
-        if (operation == 'i') {
+        if (operation == 'i') { // insert user 
             System.out.println("ggg");
             try {
                 ps = con.prepareStatement("INSERT INTO students(StudentId, FirstName, LastName, Sex, BirthDay, PhoneNumber, Address, Email, Password) VALUES (?,?,?,?,?,?,?,?,?)");
@@ -46,6 +46,54 @@ public class Student {
                 
                 if (ps.executeUpdate() > 0) {
                     JOptionPane.showMessageDialog(null, "New StudentAdded");
+                    
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, ex);
+            }
+            
+        }
+        
+        if (operation == 'u') {  // update user
+            System.out.println("ggg");
+            try {
+                ps = con.prepareStatement("UPDATE `students` SET `FirstName`= ?, `LastName`= ?, `Sex`= ?, `BirthDay`= ?, `PhoneNumber`= ?, `Address`= ?, `Email`= ?, `Password`= ? WHERE StudentId = ?");
+                
+               
+                ps.setString(1, FirstName);
+                ps.setString(2, LastName);
+                ps.setString(3, Sex);
+                ps.setString(4, BirthDay);
+                ps.setString(5, PhoneNumber);
+                ps.setString(6, Address);
+                ps.setString(7, Email);
+                ps.setString(8, Password);
+                 ps.setString(9, StudentId);
+               // ps.setString(9, Password);
+                
+                if (ps.executeUpdate() > 0) {
+                    JOptionPane.showMessageDialog(null, "Update Recoard in Student");
+                    
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, ex);
+            }
+            
+        }
+        
+        if (operation == 'd') {  // Delete Student 
+            System.out.println("ggg");
+            try {
+                ps = con.prepareStatement("DELETE FROM `students` WHERE `StudentId` = ? ");
+                ps.setString(1, StudentId);
+               
+                
+                if (ps.executeUpdate() > 0) {
+                    JOptionPane.showMessageDialog(null, "Deleted Student");
                     
                 }
                 

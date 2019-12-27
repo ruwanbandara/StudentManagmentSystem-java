@@ -30,7 +30,7 @@ public class admin {
     }
     
     
-     public int countData(){
+     public static int countData(){
     
         int total = 0;
         String sql = "SELECT COUNT(*) AS 'total' FROM `students`";
@@ -48,7 +48,7 @@ return total;
          }
     }
      
-     public int countCourse(){
+     public static int countCourse(){
          int count = 0;
          String sql = "SELECT COUNT(*) AS 'count' FROM `course`"; 
          
