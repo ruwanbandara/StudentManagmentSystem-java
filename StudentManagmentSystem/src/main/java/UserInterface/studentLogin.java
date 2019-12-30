@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.OptionPaneUI;
 import DataBaseConnector.sqlConnector;
 import admin.admin;
+import UserInterface.StudentProfile;
 
 /**
  *
@@ -55,7 +56,7 @@ public class studentLogin extends javax.swing.JFrame {
         jTextField_StudentId2 = new javax.swing.JTextField();
         jPasswordFieldStudent1 = new javax.swing.JPasswordField();
         ui_Cancel1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonStudentLogin = new javax.swing.JButton();
         ui_u1 = new javax.swing.JLabel();
         ui_p1 = new javax.swing.JLabel();
 
@@ -110,6 +111,12 @@ public class studentLogin extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel4.setText("Password    :");
 
+        jTextField_StudentId2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_StudentId2ActionPerformed(evt);
+            }
+        });
+
         ui_Cancel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         ui_Cancel1.setText("Cancel");
         ui_Cancel1.addActionListener(new java.awt.event.ActionListener() {
@@ -118,8 +125,13 @@ public class studentLogin extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jButton1.setText("Student Login");
+        jButtonStudentLogin.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButtonStudentLogin.setText("Student Login");
+        jButtonStudentLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonStudentLoginActionPerformed(evt);
+            }
+        });
 
         ui_u1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ui_u1.setForeground(new java.awt.Color(255, 0, 0));
@@ -174,7 +186,7 @@ public class studentLogin extends javax.swing.JFrame {
                         .addGap(231, 231, 231)
                         .addComponent(ui_Cancel)
                         .addGap(75, 75, 75)
-                        .addComponent(jButton1)))
+                        .addComponent(jButtonStudentLogin)))
                 .addContainerGap(149, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -215,7 +227,7 @@ public class studentLogin extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ui_Login)
                             .addComponent(ui_Cancel)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonStudentLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(169, 169, 169))))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -244,6 +256,8 @@ public class studentLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_ui_StudentIdActionPerformed
 
     private void ui_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ui_LoginActionPerformed
+       
+        
         ui_u.setVisible(false);
         ui_p.setVisible(false);
 
@@ -324,6 +338,85 @@ public class studentLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ui_Cancel1ActionPerformed
 
+    private void jTextField_StudentId2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_StudentId2ActionPerformed
+       
+        
+        
+    }//GEN-LAST:event_jTextField_StudentId2ActionPerformed
+
+    private void jButtonStudentLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStudentLoginActionPerformed
+        ui_u.setVisible(false);
+        ui_p.setVisible(false);
+
+        if(ui_StudentId.getText().equals(""))
+        {
+            ui_u.setVisible(true);
+        }if(String.valueOf(ui_Password.getPassword()).equals(""))
+        {
+            ui_p.setVisible(true);
+        }
+        else{
+//            Connection con = dbConnector.getConnection();
+//            PreparedStatement ps;
+
+//            try {
+         
+                
+                String id = jTextField_StudentId2.getText();
+                String password = String.valueOf(jPasswordFieldStudent1.getPassword());
+                
+                StudentProfile student = new StudentProfile();
+                boolean test= student.(id, password);
+                
+                if (test) {
+                                        
+                    setVisible(false);
+//                    int total = admin.countData();
+//                    System.out.println(total);
+                    
+                     StudentProfile profile = new StudentProfile();
+                     profile.setVisible(true);
+                     profile.pack();
+                     profile.setLocationRelativeTo(null);
+                     profile.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                    // profile.jLWelcome.setText("Welcome <"+ui_StudentId.getText()+">");
+                     
+//                     // This get Student count in table
+//                     home.jLStudentCount.setText("Student Count = "+Integer.toString(admin.countData()));
+//                    
+//                     //this get Coure count in tabele 
+//                     home.jLCourseCount.setText("Course Count = "+Integer.toString(admin.countCourse()));
+
+                     
+                     this.dispose();
+                     
+                    
+                }else {
+                    System.out.println("wrong");
+                }
+                
+                
+               
+                
+
+//                
+//
+//                if(rs.next()){
+//                    
+
+//                }else{
+//                    System.out.println("NO");
+//                }
+//
+//            } catch (SQLException ex) {
+////                Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+//                    JOptionPane.showMessageDialog(null, ex);
+//            }
+
+        }
+
+    }//GEN-LAST:event_jButtonStudentLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -360,7 +453,7 @@ public class studentLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonStudentLogin;
     private javax.swing.JLabel jLStudentId;
     private javax.swing.JLabel jLStudentId1;
     private javax.swing.JLabel jLabel1;

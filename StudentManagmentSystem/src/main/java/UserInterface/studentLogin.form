@@ -102,7 +102,7 @@
                           <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
                           <Component id="ui_Cancel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonStudentLogin" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="149" max="32767" attributes="0"/>
@@ -155,7 +155,7 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="ui_Login" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="ui_Cancel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="jButtonStudentLogin" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                       </Group>
@@ -264,6 +264,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_StudentId2">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_StudentId2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="jPasswordFieldStudent1">
         </Component>
@@ -278,13 +281,16 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ui_Cancel1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="jButtonStudentLogin">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Student Login"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonStudentLoginActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="ui_u1">
           <Properties>
