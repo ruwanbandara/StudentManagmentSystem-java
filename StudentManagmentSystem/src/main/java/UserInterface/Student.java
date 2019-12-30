@@ -71,7 +71,7 @@ public class Student {
                 ps.setString(6, Address);
                 ps.setString(7, Email);
                 ps.setString(8, Password);
-                // ps.setString(9, StudentId);
+                ps.setString(9, StudentId);
                // ps.setString(9, Password);
                 
                 if (ps.executeUpdate() > 0) {
