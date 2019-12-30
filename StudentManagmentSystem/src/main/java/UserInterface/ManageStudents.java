@@ -370,14 +370,15 @@ public class ManageStudents extends javax.swing.JFrame {
         String LastName = jTextField_LastName.getText();
         String BirthDay = jTextField_BirthDay.getText();
         String PhoneNumber = jTextField_PhoneNumber.getText();
-        String Address = jTextField_PhoneNumber.getText();
+        String Address = jTextField_Address.getText();
         String Email = jTextField_Email.getText();
         String Password = jTextField_SudentId.getText();
-        String Sex = "" ;
+        String Sex = "Male" ;
         if (jRadioButton_Female.isSelected()) {
             Sex = "Female";
             
-        }else if(jRadioButton_Female.isSelected()){
+        }
+        else if(jRadioButton_Female.isSelected()){
              Sex = "Male";
          }
                     

@@ -57,7 +57,8 @@ public class Student {
         }
         
         if (operation == 'u') {  // update user
-            System.out.println("ggg");
+            //JOptionPane.showMessageDialog(null, "Can't Change Student Id");
+            
             try {
                 ps = con.prepareStatement("UPDATE `students` SET `FirstName`= ?, `LastName`= ?, `Sex`= ?, `BirthDay`= ?, `PhoneNumber`= ?, `Address`= ?, `Email`= ?, `Password`= ? WHERE StudentId = ?");
                 
@@ -70,7 +71,7 @@ public class Student {
                 ps.setString(6, Address);
                 ps.setString(7, Email);
                 ps.setString(8, Password);
-                 ps.setString(9, StudentId);
+                // ps.setString(9, StudentId);
                // ps.setString(9, Password);
                 
                 if (ps.executeUpdate() > 0) {
