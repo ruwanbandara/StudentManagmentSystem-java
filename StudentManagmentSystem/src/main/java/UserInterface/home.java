@@ -43,6 +43,8 @@ public class home extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jMenuCourse = new javax.swing.JMenu();
+        jMenuItemAddCourse = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -150,6 +152,18 @@ public class home extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenuCourse.setText("Course");
+
+        jMenuItemAddCourse.setText("Add Course");
+        jMenuItemAddCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAddCourseActionPerformed(evt);
+            }
+        });
+        jMenuCourse.add(jMenuItemAddCourse);
+
+        jMenuBar1.add(jMenuCourse);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -187,6 +201,15 @@ public class home extends javax.swing.JFrame {
     
         
     }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
+
+    private void jMenuItemAddCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAddCourseActionPerformed
+        
+         AddCourse addcourse = new AddCourse();
+                     addcourse.setVisible(true);
+                     addcourse.pack();
+                     addcourse.setLocationRelativeTo(null);
+                     addcourse.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_jMenuItemAddCourseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,7 +253,9 @@ public class home extends javax.swing.JFrame {
     public static javax.swing.JLabel jLWelcome;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuCourse;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemAddCourse;
     private javax.swing.JPanel jPCourseCount;
     private javax.swing.JPanel jPStudentCount;
     private javax.swing.JPanel panelHome;
