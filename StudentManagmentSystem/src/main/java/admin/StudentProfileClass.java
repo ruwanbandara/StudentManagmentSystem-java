@@ -12,7 +12,7 @@ import java.sql.ResultSet;
  *
  * @author Ruwan Bandara
  */
-public class StudentProfile {
+public class StudentProfileClass {
     
      public boolean StudentLogin(String StudentId, String Password){
             try {
@@ -20,6 +20,7 @@ public class StudentProfile {
          
                 sqlConnector sqlConnector1 = new sqlConnector();
                 ResultSet rs = sqlConnector1.getSql(sql);
+               // System.out.println(rs.next());
                 
                 return rs.next();
         } catch (Exception e) {

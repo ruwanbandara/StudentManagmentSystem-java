@@ -16,7 +16,8 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.OptionPaneUI;
 import DataBaseConnector.sqlConnector;
 import admin.admin;
-import UserInterface.StudentProfile;
+import admin.StudentProfileClass;
+
 
 /**
  *
@@ -345,17 +346,20 @@ public class studentLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_StudentId2ActionPerformed
 
     private void jButtonStudentLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStudentLoginActionPerformed
-        ui_u.setVisible(false);
-        ui_p.setVisible(false);
+        ui_u1.setVisible(false);
+        ui_p1.setVisible(false);
+         System.out.println("jjjj");
 
-        if(ui_StudentId.getText().equals(""))
+        if(jTextField_StudentId2.getText().equals(""))
         {
-            ui_u.setVisible(true);
-        }if(String.valueOf(ui_Password.getPassword()).equals(""))
+            ui_u1.setVisible(true);
+        }if(String.valueOf(jPasswordFieldStudent1.getPassword()).equals(""))
         {
-            ui_p.setVisible(true);
+            ui_p1.setVisible(true);
         }
         else{
+                
+             
 //            Connection con = dbConnector.getConnection();
 //            PreparedStatement ps;
 
@@ -365,8 +369,8 @@ public class studentLogin extends javax.swing.JFrame {
                 String id = jTextField_StudentId2.getText();
                 String password = String.valueOf(jPasswordFieldStudent1.getPassword());
                 
-                StudentProfile student = new StudentProfile();
-                boolean test= student.(id, password);
+                StudentProfileClass ob = new StudentProfileClass();
+                boolean test = ob.StudentLogin(id, password);
                 
                 if (test) {
                                         
