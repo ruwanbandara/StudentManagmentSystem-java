@@ -34,11 +34,12 @@ public class home extends javax.swing.JFrame {
     private void initComponents() {
 
         panelHome = new javax.swing.JPanel();
-        jLWelcome = new javax.swing.JLabel();
         jPStudentCount = new javax.swing.JPanel();
         jLStudentCount = new javax.swing.JLabel();
         jPCourseCount = new javax.swing.JPanel();
         jLCourseCount = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLWelcome = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -49,10 +50,7 @@ public class home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        panelHome.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLWelcome.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLWelcome.setText("Welcome <#########>");
+        panelHome.setBackground(new java.awt.Color(117, 125, 232));
 
         jPStudentCount.setBackground(new java.awt.Color(51, 51, 255));
 
@@ -104,27 +102,45 @@ public class home extends javax.swing.JFrame {
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
+        jPanel1.setBackground(new java.awt.Color(63, 81, 181));
+
+        jLWelcome.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLWelcome.setText("Welcome <#########>");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLWelcome)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addComponent(jLWelcome)
+                .addGap(21, 21, 21))
+        );
+
         javax.swing.GroupLayout panelHomeLayout = new javax.swing.GroupLayout(panelHome);
         panelHome.setLayout(panelHomeLayout);
         panelHomeLayout.setHorizontalGroup(
             panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHomeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLWelcome)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelHomeLayout.createSequentialGroup()
                 .addGap(83, 83, 83)
                 .addComponent(jPStudentCount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                 .addComponent(jPCourseCount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelHomeLayout.setVerticalGroup(
             panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHomeLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLWelcome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 261, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 279, Short.MAX_VALUE)
                 .addGroup(panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPCourseCount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPStudentCount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -132,7 +148,9 @@ public class home extends javax.swing.JFrame {
         );
 
         jMenu3.setText("Student");
+        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jMenuItem1.setText("Add");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +159,7 @@ public class home extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem1);
 
+        jCheckBoxMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("Manage");
         jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +172,9 @@ public class home extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenuCourse.setText("Course");
+        jMenuCourse.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
+        jMenuItemAddCourse.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jMenuItemAddCourse.setText("Add Course");
         jMenuItemAddCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,7 +198,7 @@ public class home extends javax.swing.JFrame {
             .addComponent(panelHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(1197, 696));
+        setSize(new java.awt.Dimension(1347, 696));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -258,6 +279,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemAddCourse;
     private javax.swing.JPanel jPCourseCount;
     private javax.swing.JPanel jPStudentCount;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panelHome;
     // End of variables declaration//GEN-END:variables
 }
