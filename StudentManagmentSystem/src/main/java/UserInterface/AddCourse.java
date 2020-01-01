@@ -5,6 +5,8 @@
  */
 package UserInterface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ruwan Bandara
@@ -31,7 +33,7 @@ public class AddCourse extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextFieldCourceCode = new javax.swing.JTextField();
+        jTextFieldCourseCode = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextFieldCourseName = new javax.swing.JTextField();
@@ -50,9 +52,9 @@ public class AddCourse extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Cource Code :");
 
-        jTextFieldCourceCode.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldCourseCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCourceCodeActionPerformed(evt);
+                jTextFieldCourseCodeActionPerformed(evt);
             }
         });
 
@@ -126,7 +128,7 @@ public class AddCourse extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextFieldCourceCode, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jTextFieldCourseCode, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jButton1)
@@ -146,7 +148,7 @@ public class AddCourse extends javax.swing.JFrame {
                 .addGap(72, 72, 72)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextFieldCourceCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCourseCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -182,9 +184,9 @@ public class AddCourse extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldCourceCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCourceCodeActionPerformed
+    private void jTextFieldCourseCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCourseCodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCourceCodeActionPerformed
+    }//GEN-LAST:event_jTextFieldCourseCodeActionPerformed
 
     private void jTextFieldCourseNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCourseNameActionPerformed
         // TODO add your handling code here:
@@ -204,11 +206,19 @@ public class AddCourse extends javax.swing.JFrame {
 
     private void jButton_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AddActionPerformed
 
-        String CourseCode = jTextFieldCourceCode.getText();
+        
+        if(!c.isCourseExist(jTextFieldCourseCode.getText())){
+           
+        String CourseCode = jTextFieldCourseCode.getText();
         String CourseName = jTextFieldCourseName.getText();
         String Lecture = jTextFieldLecture.getText();
         String Hours = jTextFieldHours.getText();
         c.insertUpdateDeleteStudent('i', CourseCode, CourseName, Lecture, Hours);
+        
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Course Allrady Exisst");
+        }
         
         
 
@@ -260,7 +270,7 @@ public class AddCourse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldCourceCode;
+    private javax.swing.JTextField jTextFieldCourseCode;
     private javax.swing.JTextField jTextFieldCourseName;
     private javax.swing.JTextField jTextFieldHours;
     private javax.swing.JTextField jTextFieldLecture;

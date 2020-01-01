@@ -4,10 +4,12 @@ package UserInterface;
 import DataBaseConnector.sqlConnector;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -94,6 +96,33 @@ public class Course {
 //            }
 //            
 //        }
+    }
+    
+    public boolean isCourseExist(String CourseCode)
+    {
+        boolean isExist = false;
+        sqlConnector sqlConnector1 = new sqlConnector ();
+        Connection con = sqlConnector1.connection();
+        PreparedStatement ps;
+        try {
+            ps = con.prepareStatement("SELECT * FROM `course` WHERE `CourseCode` = ? ");
+            ps.setString(1, CourseCode);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()) {
+               
+                isExist = true;
+                
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return isExist;
+        
     }
         
     

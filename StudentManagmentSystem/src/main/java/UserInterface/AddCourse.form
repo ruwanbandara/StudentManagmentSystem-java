@@ -62,7 +62,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextFieldCourceCode" min="-2" pref="246" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldCourseCode" min="-2" pref="246" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -92,7 +92,7 @@
                   <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldCourceCode" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldCourseCode" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -138,9 +138,9 @@
             <Property name="text" type="java.lang.String" value="Cource Code :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldCourceCode">
+        <Component class="javax.swing.JTextField" name="jTextFieldCourseCode">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldCourceCodeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldCourseCodeActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
