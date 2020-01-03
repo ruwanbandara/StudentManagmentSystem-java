@@ -105,7 +105,7 @@ public class home extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(63, 81, 181));
 
         jLWelcome.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLWelcome.setText("Welcome <#########>");
+        jLWelcome.setText("Welcome #########");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

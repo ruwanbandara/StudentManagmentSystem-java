@@ -333,7 +333,7 @@ public class studentLogin extends javax.swing.JFrame {
                      Home.pack();
                      Home.setLocationRelativeTo(null);
                      Home.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                     home.jLWelcome.setText("Welcome <"+ui_StudentId.getText()+">");
+                     home.jLWelcome.setText("Welcome "+ui_StudentId.getText()+"");
                      
                      // This get Student count in table
                      home.jLStudentCount.setText("Student Count = "+Integer.toString(admin.countData()));
