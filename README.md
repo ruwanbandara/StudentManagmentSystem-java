@@ -11,4 +11,4 @@
 <img src="demo/userLogin.jpg">
 <img src="demo/UserAdd.jpg">
 <img src="demo/courseAdd.jpg">
-<img src="demo/userMange.jpg">
+<img src="demo/userManage.jpg">
